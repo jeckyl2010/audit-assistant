@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src\AuditAssistant.CLI\AuditAssistant.CLI.csproj" Type="Classic C#" />
+    <Project Path="src\AuditAssistant.Core\AuditAssistant.Core.csproj" Type="Classic C#" />
+    <Project Path="src\AuditAssistant.AI\AuditAssistant.AI.csproj" Type="Classic C#" />
+    <Project Path="src\AuditAssistant.Data\AuditAssistant.Data.csproj" Type="Classic C#" />
+  </Folder>
+  <Properties Name="Configuration">
+    <Property Name="Debug|AnyCPU" />
+    <Property Name="Release|AnyCPU" />
+  </Properties>
+</Solution>
