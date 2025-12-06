@@ -1,9 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>AuditAssistant.Core</AssemblyName>
+    <RootNamespace>AuditAssistant.Core</RootNamespace>
+    <Description>Core domain models, interfaces, and services for audit document processing with token-aware chunking</Description>
+    
+    <!-- Library Configuration -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+    <PackageTags>audit;compliance;rag;semantic-chunking;tiktoken</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

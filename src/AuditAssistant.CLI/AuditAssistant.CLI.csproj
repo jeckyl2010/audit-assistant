@@ -2,9 +2,18 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>AuditAssistant.CLI</AssemblyName>
+    <RootNamespace>AuditAssistant.CLI</RootNamespace>
+    <Description>AI-powered audit assistant CLI with RAG architecture</Description>
+    
+    <!-- Runtime Configuration -->
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    
+    <!-- Enable Trimming for smaller executables -->
+    <PublishTrimmed>false</PublishTrimmed>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +27,12 @@
     <ProjectReference Include="..\AuditAssistant.Core\AuditAssistant.Core.csproj" />
     <ProjectReference Include="..\AuditAssistant.AI\AuditAssistant.AI.csproj" />
     <ProjectReference Include="..\AuditAssistant.Data\AuditAssistant.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

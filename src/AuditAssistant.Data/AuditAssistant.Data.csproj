@@ -1,9 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>AuditAssistant.Data</AssemblyName>
+    <RootNamespace>AuditAssistant.Data</RootNamespace>
+    <Description>Data layer with PostgreSQL and pgvector for vector embeddings and similarity search</Description>
+    
+    <!-- Library Configuration -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+    <PackageTags>postgresql;pgvector;entity-framework;vector-search;embeddings</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

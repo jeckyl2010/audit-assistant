@@ -1,0 +1,32 @@
+<Project>
+  <PropertyGroup>
+    <!-- Target Framework -->
+    <TargetFramework>net10.0</TargetFramework>
+    
+    <!-- Language Features -->
+    <LangVersion>14</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <!-- Code Quality -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    
+    <!-- Build Configuration -->
+    <Deterministic>true</Deterministic>
+    <Features>strict</Features>
+    
+    <!-- Assembly Metadata -->
+    <Company>Audit Assistant</Company>
+    <Product>AI Audit Assistant</Product>
+    <Copyright>Copyright © 2025</Copyright>
+    <Authors>jeckyl2010</Authors>
+    <RepositoryUrl>https://github.com/jeckyl2010/audit-assistant</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/jeckyl2010/audit-assistant</PackageProjectUrl>
+  </PropertyGroup>
+</Project>
