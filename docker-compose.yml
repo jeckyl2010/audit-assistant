@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: docker.io/pgvector/pgvector:pg18
+    container_name: audit-assistant-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: audit123
+      POSTGRES_DB: audit_assistant
+    ports:
+      - "5432:5432"
+    volumes:
+      - audit-db-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  audit-db-data:
