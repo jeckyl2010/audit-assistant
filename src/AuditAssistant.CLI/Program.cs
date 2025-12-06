@@ -36,7 +36,7 @@ switch (aiProvider.ToLowerInvariant())
         var openAiEmbeddingModel = configuration["AI:OpenAI:EmbeddingModel"] ?? "text-embedding-3-small";
         
         kernelBuilder.AddOpenAIChatCompletion(openAiModel, openAiKey);
-        kernelBuilder.AddOpenAITextEmbeddingGeneration(openAiEmbeddingModel, openAiKey);
+        kernelBuilder.Services.AddOpenAIEmbeddingGenerator(openAiEmbeddingModel, openAiKey);
         break;
 
     case "azureopenai":
@@ -46,7 +46,7 @@ switch (aiProvider.ToLowerInvariant())
         var azureEmbeddingDeployment = configuration["AI:AzureOpenAI:EmbeddingDeploymentName"] ?? "text-embedding-3-small";
         
         kernelBuilder.AddAzureOpenAIChatCompletion(azureDeployment, azureEndpoint, azureKey);
-        kernelBuilder.AddAzureOpenAITextEmbeddingGeneration(azureEmbeddingDeployment, azureEndpoint, azureKey);
+        kernelBuilder.Services.AddAzureOpenAIEmbeddingGenerator(azureEmbeddingDeployment, azureEndpoint, azureKey);
         break;
 
     default:
@@ -60,7 +60,7 @@ var chunkingOptions = configuration.GetSection("Chunking").Get<ChunkingOptions>(
 var ragOptions = configuration.GetSection("RAG").Get<RAGOptions>() ?? new RAGOptions();
 
 builder.Services.AddSingleton(kernel);
-builder.Services.AddSingleton(kernel.GetRequiredService<Microsoft.SemanticKernel.Embeddings.ITextEmbeddingGenerationService>());
+builder.Services.AddSingleton(kernel.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>());
 builder.Services.AddSingleton(chunkingOptions);
 builder.Services.AddSingleton(ragOptions);
 builder.Services.AddScoped<IDocumentParser, MarkdownDocumentParser>();

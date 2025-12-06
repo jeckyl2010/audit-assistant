@@ -1,27 +1,27 @@
 #pragma warning disable SKEXP0001
-using Microsoft.SemanticKernel.Embeddings;
+using Microsoft.Extensions.AI;
 
 namespace AuditAssistant.AI.Services;
 
 public class EmbeddingService
 {
-    private readonly ITextEmbeddingGenerationService _embeddingService;
+    private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
 
-    public EmbeddingService(ITextEmbeddingGenerationService embeddingService)
+    public EmbeddingService(IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator)
     {
-        _embeddingService = embeddingService;
+        _embeddingGenerator = embeddingGenerator;
     }
 
     public async Task<float[]> GenerateEmbeddingAsync(string text, CancellationToken cancellationToken = default)
     {
-        var embedding = await _embeddingService.GenerateEmbeddingAsync(text, cancellationToken: cancellationToken);
-        return embedding.ToArray();
+        var embedding = await _embeddingGenerator.GenerateAsync(text, cancellationToken: cancellationToken);
+        return embedding.Vector.ToArray();
     }
 
     public async Task<List<float[]>> GenerateEmbeddingsAsync(List<string> texts, CancellationToken cancellationToken = default)
     {
-        var embeddings = await _embeddingService.GenerateEmbeddingsAsync(texts, cancellationToken: cancellationToken);
-        return embeddings.Select(e => e.ToArray()).ToList();
+        var embeddings = await _embeddingGenerator.GenerateAsync(texts, cancellationToken: cancellationToken);
+        return embeddings.Select(e => e.Vector.ToArray()).ToList();
     }
 }
 #pragma warning restore SKEXP0001
