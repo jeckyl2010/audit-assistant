@@ -14,6 +14,7 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
     
     <!-- Build Configuration -->
     <Deterministic>true</Deterministic>
