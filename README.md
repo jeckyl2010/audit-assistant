@@ -1,6 +1,8 @@
 # AI Audit Assistant
 
-An intelligent audit assistant built with .NET that analyzes audit documentation against compliance standards and generates professional audit reports with findings.
+An intelligent audit assistant built with **.NET 10.0** and **C# 14** that analyzes audit documentation against compliance standards and generates professional audit reports with findings.
+
+**🆕 Visual Studio 2026 Ready:** Optimized for the November 2025 release with `.slnx` solution format, GitHub Copilot integration, and Podman container support.
 
 ## Features
 
@@ -25,6 +27,10 @@ Compliance Requirements → Query Embedding → Vector Search (Top-K)
                          Relevant Chunks → AI Analysis → Findings
 ```
 
+**Solution Formats:**
+- Modern: `AuditAssistant.slnx` (Visual Studio 2026 XML-based format - recommended)
+- Legacy: `AuditAssistant.sln` (backwards compatibility)
+
 **Project Structure:**
 ```
 AuditAssistant/
@@ -46,10 +52,11 @@ AuditAssistant/
 
 ## Prerequisites
 
-- .NET 9.0 SDK or later
-- PostgreSQL 18.1+ with pgvector extension
-- Podman 5.7.0+ OR Docker Desktop (for containerized setup)
-- OpenAI API key OR Azure OpenAI subscription OR GitHub Copilot Pro license
+- **.NET 10.0 SDK** (with C# 14 support)
+- **Visual Studio 2026** (November 2025 release) - recommended for `.slnx` support and AI-powered features
+- **PostgreSQL 18.1+** with pgvector extension
+- **Podman 5.7.0+** OR Docker Desktop (for containerized setup)
+- **OpenAI API key** OR Azure OpenAI subscription OR GitHub Copilot Pro license
 
 ## Setup
 
